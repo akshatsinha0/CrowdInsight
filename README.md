@@ -50,3 +50,88 @@ Option 2: Local Development
 cd server && pip install -r requirements.txt
 cd ../client && npm install
 npm run dev
+
+## 📊 Dataset Preparation
+1. Download [ShanghaiTech Dataset Part A](https://www.dropbox.com/s/xxxxxx/dataset.zip?dl=0)
+2. Structure files:
+/datasets
+/ShanghaiTech
+/part_A
+/train_data
+/test_data
+
+## 🧠 Model Training
+python train.py --dataset ShanghaiTech --batch_size 16 --epochs 100
+
+
+**Key Parameters**:
+- Loss Function: `Optimal Transport`
+- Augmentation: Random cropping + flipping
+- Evaluation: MAE + MSE metrics
+
+## 🌐 API Documentation
+curl -X POST -F "image=@crowd.jpg" http://localhost:5000/api/analyze
+
+
+**Sample Response**:
+{
+"count": 1247,
+"hotspots": [...],
+"risk_level": "Moderate",
+"density_map": "base64_data"
+}
+
+
+
+## 🖥 System Requirements
+| Component | Minimum (CPU) | Recommended (GPU) |
+|-----------|---------------|-------------------|
+| RAM       | 8GB           | 16GB              |
+| Storage   | 10GB HDD      | 50GB NVMe         |
+| GPU       | -             | RTX 3060+         |
+
+## 🎨 Interface Overview
+![Analysis Dashboard](docs/screenshots/dashboard.png)  
+*Interactive density map with risk assessment overlay*
+
+## 🤝 Contribution
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m 'Add amazing feature'`
+4. Push to branch: `git push origin feature/amazing-feature`
+5. Open Pull Request
+
+## 📜 License
+MIT License - See [LICENSE](LICENSE) for details  
+*Please cite our work if using in research:*
+@misc{crowdinsight2024,
+title={CrowdInsight: Hybrid ML Architecture for Crowd Analysis},
+author={Your Name},
+year={2024},
+publisher={GitHub},
+journal={GitHub repository},
+howpublished={\url{https://github.com/yourusername/crowd-insight}}
+}
+
+
+## 🧠 Behind the Code
+**ML/Web Integration**:
+graph TD
+A[User Upload] --> B[Flask API]
+B --> C[GPU Inference]
+C --> D[Result Processing]
+D --> E[Vue Visualization]
+
+
+
+## ⌨️ Power User Shortcuts
+| Key Combo | Action                |
+|-----------|-----------------------|
+| Ctrl + U  | Upload Image          |
+| Ctrl + L  | Toggle Layers         |
+| Space     | 3D View Rotation      |
+
+---
+
+**CrowdInsight** © 2024 - Transforming Crowd Management Through AI  
+[Report Bug](https://github.com/yourusername/crowd-insight/issues) | [Request Feature](https://github.com/yourusername/crowd-insight/issues)
