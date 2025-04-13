@@ -2,6 +2,7 @@ import os
 import torch
 import torch.nn as nn
 from torchvision import models
+from flask import current_app 
 
 class CSRNet(nn.Module):
     def __init__(self):
