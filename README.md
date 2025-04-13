@@ -39,3 +39,14 @@
 - Docker 24.0+ / Node 18+ / Python 3.11
 
 ### Installation
+Clone repository
+git clone https://github.com/yourusername/crowd-insight.git
+cd crowd-insight
+
+Option 1: Docker Setup
+docker-compose up --build
+
+Option 2: Local Development
+cd server && pip install -r requirements.txt
+cd ../client && npm install
+npm run dev
