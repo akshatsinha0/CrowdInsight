@@ -1,0 +1,129 @@
+.qodo
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+
+# Flask
+instance/
+.webassets-cache
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Environment variables
+.env
+
+# Temporary uploads
+temp_uploads/
+
+# Neural network model files
+*.pth
+*.pt
+*.h5
+
+# Dataset files
+datasets/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Docker
+.dockerignore
+
+# Logs
+logs/
+*.log
+
+# Crowd Counting UI .gitignore
+
+# --- Default Vue/Vite/Node.js ignores ---
+node_modules/
+dist/
+dist-ssr/
+*.local
+.env
+.env.*
+.DS_Store
+coverage/
+
+# --- Editor/IDE specific ---
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- Logs and databases ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+*.sqlite
+*.sql
+
+# --- Dependency directories ---
+jspm_packages/
+bower_components/
+
+# --- TypeScript/Vite cache ---
+.tsbuildinfo
+.vite/
+.cache/
+
+# --- Testing ---
+/coverage/
+/cypress/screenshots/
+/cypress/videos/
+
+# --- Environment files ---
+.env
+.env.local
+.env.*.local
+
+# --- Optional ---
+# Uncomment if using Docker
+# Dockerfile
+# docker-compose.yml
+# docker-compose.*.yml
+
+# --- Optional local overrides ---
+# Local development overrides
+local-config.json
+override/
+
+# --- Build files ---
+/public/build/
+/public/assets/
+/public/*.map
+
+# --- OS generated files ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
