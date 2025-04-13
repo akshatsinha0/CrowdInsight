@@ -1,0 +1,61 @@
+
+@property --hue-primary {
+    syntax: '<angle>';
+    initial-value: 250deg;
+    inherits: true;
+  }
+  
+  @property --hue-secondary {
+    syntax: '<angle>';
+    initial-value: 190deg;
+    inherits: true;
+  }
+  
+  :root {
+    /* Dynamic color system */
+    --color-primary: hsl(var(--hue-primary) 100% 60%);
+    --color-secondary: hsl(var(--hue-secondary) 100% 60%);
+    --color-accent: color-mix(in srgb, var(--color-primary) 50%, var(--color-secondary));
+    
+    /* Quantum depth layers */
+    --depth-0: 0 0 0px transparent;
+    --depth-1: 0 4px 12px color-mix(in srgb, var(--color-primary) 10%, transparent);
+    --depth-2: 0 8px 24px color-mix(in srgb, var(--color-primary) 15%, transparent);
+    --depth-3: 0 16px 32px color-mix(in srgb, var(--color-primary) 20%, transparent);
+    
+    /* Responsive typography using clamp */
+    --font-scale: clamp(0.9, 0.8 + 0.5vw, 1.2);
+    --weight-thin: 300;
+    --weight-normal: 400;
+    --weight-bold: 700;
+    --weight-black: 900;
+    
+    /* Make font weight respond to viewport */
+    --heading-weight: clamp(600, 600 + 3 * (100vw - 320px) / 1080, 900);
+  }
+  
+  /* Self-organizing layout grid */
+  .quantum-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    grid-auto-rows: max-content;
+    gap: clamp(1rem, 2vw, 2rem);
+  }
+  
+  /* Responsive type scaling */
+  h1 {
+    font-weight: var(--heading-weight);
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.1;
+  }
+  
+  /* Color transitions */
+  .color-shift {
+    transition: --hue-primary 2s ease, --hue-secondary 2s ease;
+  }
+  
+  .color-shift:hover, .color-shift:focus {
+    --hue-primary: 280deg;
+    --hue-secondary: 160deg;
+  }
+  

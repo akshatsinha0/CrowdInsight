@@ -60,17 +60,62 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue';
 import { RouterView, RouterLink } from 'vue-router';
 import CustomCursor from '@/components/ui/CustomCursor.vue';
+const isScrolled = ref(false);
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50;
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <style>
 @import '@/assets/styles/global.css';
+@import '@/assets/styles/quantum-variables.css';
 
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: radial-gradient(
+    circle at 80% 20%,
+    color-mix(in srgb, var(--color-deep-blue-800) 70%, var(--color-purple-700)),
+    var(--color-deep-blue-900)
+  );
+}
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: var(--space-3) 0;
+  backdrop-filter: blur(8px);
+  box-shadow: var(--depth-1);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.app-header.scrolled {
+  padding: var(--space-2) 0;
+  background: color-mix(in srgb, var(--color-deep-blue-900) 70%, transparent);
+}
+
+/* Update other styles with quantum design system */
+.logo-text {
+  font-size: var(--font-size-xl);
+  font-weight: var(--heading-weight);
+  letter-spacing: -0.05em;
+  margin: 0;
 }
 
 .app-header {

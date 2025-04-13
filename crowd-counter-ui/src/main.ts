@@ -14,6 +14,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faChartLine, faUsers, faBrain, faTachometerAlt } from '@fortawesome/free-solid-svg-icons'
 // Import brand icons from brands package
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { initAdaptiveUI } from '@/services/AdaptiveUIService';
+import { getGazeManager } from '@/services/GazeManager';
 
 // Add icons to library
 library.add(
@@ -35,3 +37,7 @@ app.use(router)
 app.component('FontAwesomeIcon', FontAwesomeIcon)
 
 app.mount('#app')
+initAdaptiveUI();
+
+const gazeManager = getGazeManager();
+gazeManager.initialize();
