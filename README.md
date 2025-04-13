@@ -1,4 +1,4 @@
-# CrowdInsight ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) ![Vue 3](https://img.shields.io/badge/Vue-3-42b883) ![Python 3.11](https://img.shields.io/badge/Python-3.11-3776ab) ![Model v1.2](https://img.shields.io/badge/Model-v1.2-ff69b4)
+# CrowdInsight ![License: DemoAkshat](https://img.shields.io/badge/License-DemoAkshat-blue.svg) ![Vue 3](https://img.shields.io/badge/Vue-3-42b883) ![Python 3.11](https://img.shields.io/badge/Python-3.11-3776ab) ![Model v1.2](https://img.shields.io/badge/Model-v1.2-ff69b4)
 
 **AI-Powered Crowd Analysis Platform**  
 *"See Beyond the Crowd with Machine Learning"*
@@ -100,18 +100,6 @@ curl -X POST -F "image=@crowd.jpg" http://localhost:5000/api/analyze
 3. Commit changes: `git commit -m 'Add amazing feature'`
 4. Push to branch: `git push origin feature/amazing-feature`
 5. Open Pull Request
-
-## 📜 License
-MIT License - See [LICENSE](LICENSE) for details  
-*Please cite our work if using in research:*
-@misc{crowdinsight2024,
-title={CrowdInsight: Hybrid ML Architecture for Crowd Analysis},
-author={Your Name},
-year={2024},
-publisher={GitHub},
-journal={GitHub repository},
-howpublished={\url{https://github.com/yourusername/crowd-insight}}
-}
 
 
 ## 🧠 Behind the Code
